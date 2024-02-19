@@ -8,12 +8,12 @@ resource "aws_s3_bucket" "example" {
   bucket = "<BUCKET NAME>"
 }
 
-resource "aws_s3_bucket_policy" "bucket_policy"{
+resource "aws_s3_bucket_policy" "example_policy"{
     bucket = aws_s3_bucket.example.id 
     policy = jsonencode({
         "Version": "2017-10-17",
         "Statement": [
-            {  
+            {
                 "Sid": "S3 Permissions", # Modify as you need
                 "Effect": "Allow",
                 "Principal": "*",
@@ -42,7 +42,7 @@ resource "aws_s3_bucket_ownership_controls" "example" {
   }
 }
 
-resource "aws_s3_bucket_public_access_block" "example" {
+resource "aws_s3_bucket_public_access_block" "example" { # Makes content public
   bucket = aws_s3_bucket.example.id
 
   block_public_acls       = false
