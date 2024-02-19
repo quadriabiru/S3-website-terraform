@@ -13,8 +13,8 @@ resource "aws_s3_bucket_policy" "bucket_policy"{
     policy = jsonencode({
         "Version": "2017-10-17",
         "Statement": [
-            {
-                "Sid": "S3 Permissions",
+            {  
+                "Sid": "S3 Permissions", # Modify as you need
                 "Effect": "Allow",
                 "Principal": "*",
                 "Action": [
